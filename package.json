@@ -1,0 +1,15 @@
+{
+  "name": "instagram-web-scraper",
+  "version": "1.0.0",
+  "description": "Scraper For Instagram Posts...",
+  "main": "index.js",
+  "dependencies": {
+    "puppeteer": "^13.5.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scrape": "node index.js"
+  },
+  "author": "Sanuja Tharinda",
+  "license": "ISC"
+}
