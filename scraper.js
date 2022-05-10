@@ -38,7 +38,7 @@ const takeScreenshot = async (page, resultsFileName) => {
 const waitForPageLoad = async (page, resultsFileName) => {
     console.log("INFO: Waiting For Instagram Post To Load")
     try {
-        await page.waitForSelector(".qF0y9.Igw0E.IwRSH.YBx95.ybXk5._4EzTm");
+        await page.waitForSelector(".qF0y9.Igw0E.IwRSH.YBx95.ybXk5._4EzTm", { timeout: 5000 });
     } catch (error) {
         console.log("ERROR: Instagram post load failed...")
         await takeScreenshot(page, resultsFileName)

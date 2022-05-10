@@ -7,8 +7,7 @@ async function scrape(browserInstance, resultsFileName, postURL) {
         await scraper.scrape(browser, resultsFileName, postURL);
     }
     catch (e) {
-        console.log(e)
-        console.log(`ERROR: Scraping Finished With An Error`);
+        console.log(`ERROR: Scraping Failed. Please Check Your Internet Connection...`);
         process.exit();
     }
     await browser.close()
