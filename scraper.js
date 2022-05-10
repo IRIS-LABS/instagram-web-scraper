@@ -92,8 +92,9 @@ const getNumberOfComments = async (page) => {
         const numberOfComments = await page.$$eval(commentsSelector, (elements) => {
             return elements.length;
         });
-
-        return numberOfComments ? numberOfComments.toString() : "0";
+        if (numberOfComments) return numberOfComments.toString()
+        console.log("INFO: No Comments Found...")
+        return null
     } catch (error) {
         console.log("ERROR: Scraping Number Of Comments Failed...");
         return null;
@@ -116,9 +117,9 @@ const login = async (page) => {
         await page.type('input[name="username"]', username);
         await page.type('input[name="password"]', password);
         await page.click("button[type='submit']")
-        await page.waitForNavigation()
+        await page.waitForSelector("svg[aria-label='Home']", { timeout: 5000 })
     } catch (error) {
-        console.log("ERROR: Login Failed...");
+        console.log("ERROR: Login Failed. Please Check Your Username And Password...");
         console.log("ERROR: Web Scraping Failed...");
         process.exit();
     }
