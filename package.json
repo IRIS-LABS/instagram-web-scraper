@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scrape": "node index.js"
+    "scrape-post": "node scrapePost.js",
+    "scrape-comment-count": "node scrapeCommentCount.js"
   },
   "author": "Sanuja Tharinda",
   "license": "ISC"

@@ -15,9 +15,10 @@ console.log("INFO: Post URL:", POST_URL);
 
 const browser = require('./browser');
 const controller = require('./controller');
+const scraper = require("./scrapers/postScraper");
 
 //Start the browser and create a browser instance
 let browserInstance = browser.start();
 
 //Start scraping
-controller.scrape(browserInstance, RESULT_FILE_NAME, POST_URL);
+controller.scrape(browserInstance, RESULT_FILE_NAME, POST_URL, scraper);

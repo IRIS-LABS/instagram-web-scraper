@@ -1,0 +1,7 @@
+{
+    "SCRAPED_DATA_DIR": "Scraped Data",
+    "SCREENSHOTS_DIR": "Screenshots",
+    "COOKIES_PATH": "./cookies.json",
+    "CREDENTIALS_PATH": "./credentials.json",
+    "INSTAGRAM_LOGIN_URL": "https://www.instagram.com/accounts/login/"
+}
