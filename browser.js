@@ -8,7 +8,7 @@ async function start() {
             headless: true,
             args: ["--disable-setuid-sandbox"],
             'ignoreHTTPSErrors': true,
-            timeout: 5000
+            timeout: 10000
         });
     } catch (error) {
         console.log("ERROR: Couldn't Open The Browser...");

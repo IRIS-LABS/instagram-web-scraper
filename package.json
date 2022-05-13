@@ -4,12 +4,14 @@
   "description": "Scraper For Instagram Posts...",
   "main": "index.js",
   "dependencies": {
-    "puppeteer": "^13.5.1"
+    "puppeteer": "^13.5.1",
+    "puppeteer-autoscroll-down": "^1.1.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "scrape-post": "node scrapePost.js",
-    "scrape-comment-count": "node scrapeCommentCount.js"
+    "scrape-comment-count": "node scrapeCommentCount.js",
+    "scrape-profile": "node scrapeProfile.js"
   },
   "author": "Sanuja Tharinda",
   "license": "ISC"

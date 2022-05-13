@@ -8,7 +8,7 @@ async function scrape(browserInstance, resultsFileName, URL, scraper) {
         console.log(`INFO: Scraping Complete. Please refer ${`${SCRAPED_DATA_DIR}/${resultsFileName.replace(/\s/g, "_")}.json`} For The Scraped Data`)
     }
     catch (e) {
-        console.log(`ERROR: Couldn't Start Bowser. Please Check Your Internet Connection...`, e);
+        console.log(`ERROR: Network Error. Please Check Your Internet Connection...`, e);
         process.exit();
     }
     try {

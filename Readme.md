@@ -30,8 +30,13 @@
 * After Running The Above Command, The Scraping Will Be Started.
 
 * Scraped data will be saved to Scraped Data folder
+### Scrape Profile
 
-## Special Points
+* Run The Command "npm run scrape-profile 'output_file_name' 'profile_url'"
+    Ex: npm run scrape-profile joe https://www.instagram.com/joe.fod/
+  
+* After Running The Above Command, The Scraping Will Be Started.
 
-* If There's No Post Section For Some Links, A Screenshot Of The Page Will Be Taken And   Stored In The Screenshots Folder With Filename output_file_name.png
+* Scraped data will be saved to Scraped Data folder
+
 

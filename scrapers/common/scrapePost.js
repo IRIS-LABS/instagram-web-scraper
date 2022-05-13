@@ -13,23 +13,29 @@ const scrapePost = async (page, postURL, resultsFileName) => {
     };
     console.log("INFO: Post Scraping Started...");
 
+    let postImageURL = null;
 
-    const postImageURL = await page.$eval("img[class='FFVAD']", el => el['src']);
+    try {
+        postImageURL = await page.$eval("img[class='FFVAD']", el => el['src']);
+    } catch (error) {
+        console.log(`INFO: Post Image Not Found For ${postURL}`);
+    }
+
+
     const profileImageURL = await page.$eval("img[class='_6q-tv']", el => el['src']);
     const profileUsername = await page.$eval(".sqdOP.yWX7d._8A5w5.ZIAjV", el => el.innerText);
     let numberOfLikes = null;
     try {
         numberOfLikes = await page.$eval("div[class='_7UhW9   xLCgt        qyrsm KV-D4               fDxYl    T0kll '] > span", el => el.innerText);
     } catch (e) {
-        console.log("ERROR: Number Of Likes Not Found...")
+        console.log("INFO: Number Of Likes Not Found...")
     }
 
     const scrapedData = {
-        postImageURL,
         profileImageURL,
         username: profileUsername,
     };
-
+    if (postImageURL) scrapedData["postImageURL"] = postImageURL;
     if (numberOfLikes) scrapedData["numberOfLikes"] = numberOfLikes;
     return [postLoaded, scrapedData];
 };
