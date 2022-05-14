@@ -3,25 +3,6 @@ const { waitForPageLoad, writeToFile } = require("../utils");
 const { scrapePost } = require("./common/scrapePost");
 const { scrollPageToBottom } = require('puppeteer-autoscroll-down')
 
-async function autoScroll(page) {
-    await page.evaluate(async () => {
-        await new Promise((resolve, reject) => {
-            var totalHeight = 0;
-            var distance = 100;
-            var timer = setInterval(() => {
-                var scrollHeight = document.body.scrollHeight;
-                window.scrollBy(0, distance);
-                totalHeight += distance;
-
-                if (totalHeight >= scrollHeight) {
-                    clearInterval(timer);
-                    resolve();
-                }
-            }, 100);
-        });
-    });
-}
-
 async function scrape(browser, resultsFileName, profileURL) {
     let page = await browser.newPage();
     console.log("INFO: Starting Scraping Profile...")

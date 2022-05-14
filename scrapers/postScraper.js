@@ -1,4 +1,5 @@
 const { setupSession } = require("../auth");
+const { writeToFile } = require("../utils");
 const { scrapePost } = require("./common/scrapePost");
 
 async function scrape(browser, resultsFileName, postURL) {
@@ -13,6 +14,11 @@ async function scrape(browser, resultsFileName, postURL) {
         process.exit();
     }
     console.log("INFO: Post Data:", postData);
+    const writeData = {
+        media: postData
+    };
+
+    writeToFile(writeData, resultsFileName);
 };
 
 
